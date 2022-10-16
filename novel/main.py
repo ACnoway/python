@@ -63,7 +63,7 @@ class main_UI(QWidget):
         self.seearea.resize(300, 490)
         self.seearea.move(0, 0)
         self.seearea.setContentsMargins(50, 50, 50, 50)
-        self.seearea.
+        # self.seearea.
         self.seearea.setWidget(self.mainshow)
         self.seearea.hide()
 
