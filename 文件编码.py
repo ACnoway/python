@@ -11,7 +11,7 @@ for file in filelist:
         for ffile in ffilelist:
             filelist.append(file + '/' + ffile)
         continue
-    name, ext = file.split('.               ')
+    name, ext = file.split('.')
     if ext == "exe":
         continue
     f = open(path + file, "r", encoding="utf-8")
