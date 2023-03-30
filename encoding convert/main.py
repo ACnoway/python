@@ -2,7 +2,7 @@ import os
 
 list_name = []
 
-path = os.path.join(os.getcwd(), "shuju")
+path = os.getcwd()
 out_path = os.path.join(os.getcwd(), "out")
 try:
     os.mkdir(out_path)
