@@ -2,15 +2,13 @@ import os
 
 list_name = []
 
-path = os.getcwd()
+path = os.path.join(os.getcwd(), "shuju")
 out_path = os.path.join(os.getcwd(), "out")
 try:
     os.mkdir(out_path)
 except FileExistsError:
     pass
-print(out_path)
 
-# 要统一转换成的编码
 print("choose one")
 print("1. utf-8")
 print("2. gb2312")
@@ -22,7 +20,6 @@ if encode_out == 'utf-8':
     encode_in = 'gb2312'
 else:
     encode_in = 'utf-8'
-print(encode_out)
 
 
 def get_files(dir_path, second):
