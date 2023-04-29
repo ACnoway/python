@@ -1,9 +1,9 @@
-print("正在加载，请稍候")
 import cv2 as cv
 from ctypes import windll
 import time
 import pygame.camera as pycam
 # 识别电脑摄像头并打开
+print("正在加载，请稍候")
 pycam.init()
 cams = pycam.list_cameras()
 print("请选择要使用的摄像头：")
