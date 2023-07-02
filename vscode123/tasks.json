@@ -1,0 +1,60 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "git add",
+            "command": "git",
+            "args": [
+                "add",
+                "."
+            ],
+            "problemMatcher":{
+                "pattern":{
+                    "regexp": "[\\s\\S]*"
+                }
+            }
+        },
+        {
+            "type": "shell",
+            "label": "git commit",
+            "command": "git",
+            "args": [
+                "commit",
+                "-m",
+                "${relativeFileDirname}/${fileBasenameNoExtension}"
+            ],
+            "problemMatcher":{
+                "pattern":{
+                    "regexp": "[\\s\\S]*"
+                }
+            },
+            "dependsOn":["git add"]
+        },
+        {
+            "type": "shell",
+            "label": "git push",
+            "command": "git",
+            "args": [
+                "push"
+            ],
+            "presentation": {
+                "focus": true
+            },
+            "problemMatcher":{
+                "pattern":{
+                    "regexp": "[\\s\\S]*"
+                }
+            },
+            "dependsOn":["git commit"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "commitText",
+            "type": "promptString",
+            "description": "输入commit的备注",
+            "default": "update"
+        }
+    ],
+    "version": "2.0.0"
+}

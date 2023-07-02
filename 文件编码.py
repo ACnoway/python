@@ -13,8 +13,13 @@ for file in filelist:
         for ffile in ffilelist:
             filelist.append(file + '/' + ffile)
         continue
+<<<<<<< HEAD
     name, ext = chai[len(chai) - 1].split('.')
     if ext != "txt":
+=======
+    name, ext = file.split('.')
+    if ext == "exe":
+>>>>>>> 54ecd946ce8ff7a4d821be7c66820a0f63f8f810
         continue
     print(file)
     f = open(path + file, "r", encoding="gbk")

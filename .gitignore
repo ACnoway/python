@@ -1,5 +1,6 @@
 .vscode/
-build/
-dist/
+**/build/
+**/dist/
 *.exe
 **/__pycache__/
+**/shuju/
