@@ -2,17 +2,25 @@ import os
 
 path = './'
 filelist = os.listdir(path)
+print(filelist)
 for file in filelist:
-    if file == '.git':
-        continue
-    print(file)
+    chai = file.split('/')
+    # chai = chai[len(chai) - 1]
     if os.path.isdir(path + file):
+        if chai[len(chai) - 1][0] == '.':
+            continue
         ffilelist = os.listdir(path + file)
         for ffile in ffilelist:
             filelist.append(file + '/' + ffile)
         continue
-    name, ext = file.split('.               ')
-    if ext == "exe":
+    name, ext = chai[len(chai) - 1].split('.')
+    if ext != "txt":
         continue
-    f = open(path + file, "r", encoding="utf-8")
-    print(f.readline())
+    print(file)
+    f = open(path + file, "r", encoding="gbk")
+    try:
+        s = f.readlines()
+        nf = open(path + file + ".new", "w", encoding="utf-8")
+        nf.writelines(s)
+    except UnicodeDecodeError:
+        f.close()

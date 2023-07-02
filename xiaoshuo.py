@@ -16,16 +16,14 @@ def gett(url):
     f = open("123321.txt", "a+", encoding='utf-8')
     r = requests.get(url=url, headers=head)  # requests标准形式
     soup = BeautifulSoup(r.text, "html.parser")
-    temp = soup.select(
-        '.bg6 .mlfy_main #mlfy_main_text p'
-    )
-    if url.find("_")==-1:
+    temp = soup.select('.bg6 .mlfy_main #mlfy_main_text p')
+    if url.find("_") == -1:
         f.write()
-    for x in range(0,len(temp)-1):
-        ss=str(temp[x])
-        ss=ss.replace('<p>','')
-        ss=ss.replace('</p>','\n')
-        print(ss,end='')
+    for x in range(0, len(temp) - 1):
+        ss = str(temp[x])
+        ss = ss.replace('<p>', '')
+        ss = ss.replace('</p>', '\n')
+        print(ss, end='')
     section_name = temp[0] + ' ' + temp[1]
     print(section_name)
     f.write(section_name + '\n')
@@ -35,7 +33,8 @@ def gett(url):
     section_text = temp.split()
     for x in section_text:
         f.write(x + '\n')
-    return re.findall("var nextpage=\"(.*?)\"",r.text)[0]
+    return re.findall("var nextpage=\"(.*?)\"", r.text)[0]
+
 
 url = "https://www.23qb.com/book/2385/3335719_2.html"
 a = gett(url)
