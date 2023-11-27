@@ -25,3 +25,5 @@ for ress in res:
         if get_cf == "": get_cf = s
         else: get_cf = s + '\n' + get_cf
         cnt_cf += 1
+        
+        
